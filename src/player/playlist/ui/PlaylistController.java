@@ -1,4 +1,4 @@
-package playlist;
+package player.playlist.ui;
 
 
 import java.net.URL;
@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import player.playlist.Playlist;
 
 public class PlaylistController implements Initializable{
 	
@@ -39,7 +40,7 @@ public class PlaylistController implements Initializable{
 			@Override
 			public void handle(MouseEvent event) {
 				
-				Stage stage = Playlist.getStage();
+				Stage stage = player.playlist.Playlist.getStage();
 				
 				double mouseEventX = event.getSceneX();
 				double mouseEventY = event.getSceneY();

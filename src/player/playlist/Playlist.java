@@ -1,4 +1,4 @@
-package playlist;
+package player.playlist;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ public class Playlist {
 		AnchorPane root;
 		
 		try {
-			root = (AnchorPane)FXMLLoader.load(getClass().getResource("Playlist.fxml"));
+			root = (AnchorPane)FXMLLoader.load(getClass().getResource("ui\\Playlist.fxml"));
 			
 			root.setOnMousePressed(new EventHandler<MouseEvent>() {
 	          
@@ -66,7 +66,7 @@ public class Playlist {
 		
 		
 	}
-	protected static Stage getStage() {
+	public static Stage getStage() {
 		return stage;
 	}
 	

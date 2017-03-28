@@ -18,7 +18,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
-import playlist.Playlist;
+import player.playlist.Playlist;
 
 public class PlayerController implements Initializable{
 	
@@ -46,7 +46,8 @@ public class PlayerController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		
-		String pfad = "E:\\Neuer Ordner\\musicc\\Music\\Anamanaguchi\\Anamanaguchi - Endless Fantasy\\01 Endless Fantasy.mp3";
+//		String pfad = "E:\\Neuer Ordner\\musicc\\Music\\Anamanaguchi\\Anamanaguchi - Endless Fantasy\\01 Endless Fantasy.mp3";
+		String pfad = "D:\\Multimedia\\Musik\\MP3\\Anamanaguchi - 2009 - Dawn Metropolis (V0)\\02 Anamanaguchi - Jetpack Blues.mp3";
 		
 		Media hit = new Media(new File(pfad).toURI().toString());
 		MediaPlayer mp = new MediaPlayer(hit);

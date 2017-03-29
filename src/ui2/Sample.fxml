@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui2.SampleController">
+   <children>
+      <Pane layoutY="6.0" prefHeight="542.0" prefWidth="364.0">
+         <children>
+            <Button fx:id="play" layoutX="57.0" layoutY="24.0" mnemonicParsing="false" text="play" />
+            <Button fx:id="pause" layoutX="104.0" layoutY="24.0" mnemonicParsing="false" text="pause" />
+            <Button fx:id="stop" layoutX="162.0" layoutY="24.0" mnemonicParsing="false" text="stop" />
+            <ListView fx:id="playlist" layoutX="22.0" layoutY="127.0" prefHeight="378.0" prefWidth="321.0" />
+            <Label layoutX="22.0" layoutY="104.0" text="playlist" />
+            <Button layoutX="22.0" layoutY="505.0" mnemonicParsing="false" text="add file" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
-

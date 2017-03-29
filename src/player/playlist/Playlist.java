@@ -94,5 +94,8 @@ public class Playlist {
 		}
 		return null;
 	}
+	public ObservableList getObservableList(){
+		return playlist;
+	}
 
 }

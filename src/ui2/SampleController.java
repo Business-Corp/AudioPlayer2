@@ -124,7 +124,7 @@ public class SampleController implements Initializable{
 		
 		
 		sliderProgress.setMin(0);
-		sliderProgress.setValue(170);
+//		sliderProgress.setValue(170);
 		
 	}
 	private void updateValues(){
@@ -134,10 +134,19 @@ public class SampleController implements Initializable{
 		
 		player.next();
 		bindSlider();
+		
+		Track track = player.getCurrentTrack();
+		 if(track != null){
+		playlist.getSelectionModel().select(track);
+		 }
 	}
 	private void playTrack(){
 		player.play();
 		bindSlider();
+		Track track = player.getCurrentTrack();
+		 if(track != null){
+		playlist.getSelectionModel().select(track);
+		 }
 		
 	}
 	private void bindSlider(){

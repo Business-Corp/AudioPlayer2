@@ -109,6 +109,9 @@ public class PlayerController {
 		}
 		return new Duration(0);
 	}
+	public Track getCurrentTrack(){
+		return trackATM;
+	}
 
 	private boolean checkPlaylist() {
 		return playlist != null;

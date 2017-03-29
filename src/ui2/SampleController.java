@@ -11,6 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Slider;
+import javafx.stage.FileChooser;
 import javafx.util.Callback;
 import player.Track;
 import player.control.PlayerController;
@@ -30,6 +32,15 @@ public class SampleController implements Initializable{
 	
 	@FXML
 	private Button addFile = new Button();
+	
+	@FXML
+	private Button bNext = new Button();
+	
+	@FXML
+	private Button bPrev = new Button();
+	
+	@FXML
+	private Slider sliderProgress = new Slider();
 
 	@FXML
 	private ListView<Track> playlist = new ListView<Track>();
@@ -57,9 +68,19 @@ public class SampleController implements Initializable{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				String pfad2 = "E:\\Neuer Ordner\\musicc\\Music\\Anamanaguchi\\Anamanaguchi - Endless Fantasy\\01 Endless Fantasy.mp3";
-				File file = new File(pfad2);
-				listePlaylist.addTrack(file);
+//				String pfad2 = "E:\\Neuer Ordner\\musicc\\Music\\Anamanaguchi\\Anamanaguchi - Endless Fantasy\\01 Endless Fantasy.mp3";
+//				File file = new File(pfad2);
+//				listePlaylist.addTrack(file);
+				
+			
+				//auf multiplen chosser umschreiben..
+				FileChooser fc = new FileChooser();
+				fc.setTitle("media auswaehlen");
+				File auswahl = fc.showOpenDialog(addFile.getScene().getWindow());
+				if(auswahl != null){
+					listePlaylist.addTrack(auswahl);
+				}
+				
 				
 			}
 		});
@@ -85,6 +106,25 @@ public class SampleController implements Initializable{
 				
 			}
 		});
+		
+		bNext.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				player.next();
+				
+			}
+		});
+		bPrev.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				player.previous();
+				
+			}
+		});
+		
+		sliderProgress.setMax(255);
+		sliderProgress.setMin(0);
+		sliderProgress.setValue(170);
 		
 	}
 

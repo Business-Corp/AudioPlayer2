@@ -33,6 +33,9 @@ public class Track {
 		return media.getDuration();
 	}
 	public String toString(){
+		if(titel.equals("")){
+			return artist;
+		}
 		return artist+" - "+titel;
 		
 	}

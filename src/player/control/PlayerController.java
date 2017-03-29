@@ -16,6 +16,7 @@ public class PlayerController {
 	private static PlayerController player = new PlayerController();
 	private MediaPlayer mediaPlayer;
 	private Playlist playlist;
+	private Track trackATM;
 
 	private PlayerController() {
 		// TODO Auto-generated constructor stub
@@ -44,6 +45,7 @@ public class PlayerController {
 					
 					mediaPlayer=new MediaPlayer(new Media(temp.getFile().toURI().toString()));
 					mediaPlayer.play();
+					trackATM=temp;
 				}
 			}
 		}
@@ -66,7 +68,16 @@ public class PlayerController {
 
 	public void next() {
 		if (checkPlaylist()) {
-
+			int index = playlist.getIndex(trackATM);
+			
+			Track temp = playlist.getTrackFromIndex(index+1);
+			if(temp != null){
+				stop();
+				mediaPlayer=new MediaPlayer(new Media(temp.getFile().toURI().toString()));
+				mediaPlayer.play();
+				trackATM=temp;
+			}
+			
 		}
 
 	}

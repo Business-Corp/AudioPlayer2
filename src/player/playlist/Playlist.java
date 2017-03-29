@@ -19,10 +19,12 @@ public class Playlist {
 	private static Stage stage = new Stage();
 	
 	
+	//Die playlist verwaltet die Oberservable list, gibt den momentan markierten track, den vorgaenger sowie nen nachfolger..
 	public Playlist() {
 		
-//		Stage stage = new Stage();
+		//Die GUI komponenten hieraus entfernen
 		
+
 		stage.initStyle(StageStyle.UNDECORATED);
 		
 		AnchorPane root;
@@ -69,5 +71,7 @@ public class Playlist {
 	public static Stage getStage() {
 		return stage;
 	}
+	
+	
 	
 }

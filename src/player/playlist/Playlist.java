@@ -89,8 +89,10 @@ public class Playlist {
 		return playlist.lastIndexOf(track)+1;
 	}
 	public Track getTrackFromIndex(int index){
-		return playlist.get((index%playlist.size())-1);
-		
+		if(playlist.size()>=1){
+			return playlist.get((index%playlist.size())-1);
+		}
+		return null;
 	}
 
 }

@@ -36,5 +36,8 @@ public class Track {
 		return artist+" - "+titel;
 		
 	}
+	public Media getMedia(){
+		return media;
+	}
 	
 }

@@ -13,7 +13,7 @@ import player.playlist.Playlist;
  */
 public class PlayerController {
 
-	private PlayerController player = new PlayerController();
+	private static PlayerController player = new PlayerController();
 	private MediaPlayer mediaPlayer;
 	private Playlist playlist;
 
@@ -21,7 +21,7 @@ public class PlayerController {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PlayerController getInstance() {
+	public static PlayerController getInstance() {
 		return player;
 	}
 

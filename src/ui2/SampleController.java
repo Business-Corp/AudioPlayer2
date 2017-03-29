@@ -9,7 +9,9 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.util.Callback;
 import player.Track;
 import player.control.PlayerController;
 import player.playlist.Playlist;
@@ -30,7 +32,7 @@ public class SampleController implements Initializable{
 	private Button addFile = new Button();
 
 	@FXML
-	private ListView playlist = new ListView<Track>();
+	private ListView<Track> playlist = new ListView<Track>();
 	
 	private PlayerController player = PlayerController.getInstance();
 	private Playlist listePlaylist = new Playlist();
@@ -41,6 +43,15 @@ public class SampleController implements Initializable{
 		player.setPlaylist(listePlaylist);
 		
 		playlist.setItems(listePlaylist.getObservableList());
+//		playlist.setCellFactory(new Callback<ListView<Track>, ListCell<Track>>() {
+//
+//			@Override
+//			public ListCell<Track> call(ListView<Track> param) {
+//				
+//				// TODO Auto-generated method stub
+//				return null;
+//			}
+//		});
 		
 		addFile.setOnAction(new EventHandler<ActionEvent>() {
 			

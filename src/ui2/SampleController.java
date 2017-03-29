@@ -88,7 +88,7 @@ public class SampleController implements Initializable{
 		play.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				player.play();
+				playTrack();
 				
 			}
 		});
@@ -110,7 +110,7 @@ public class SampleController implements Initializable{
 		bNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				player.next();
+				nextTrack();
 				
 			}
 		});
@@ -122,9 +122,26 @@ public class SampleController implements Initializable{
 			}
 		});
 		
-		sliderProgress.setMax(255);
+		
 		sliderProgress.setMin(0);
 		sliderProgress.setValue(170);
+		
+	}
+	private void updateValues(){
+		
+	}
+	private void nextTrack(){
+		
+		player.next();
+		bindSlider();
+	}
+	private void playTrack(){
+		player.play();
+		bindSlider();
+		
+	}
+	private void bindSlider(){
+		sliderProgress.setMax(player.getMaxTime().toSeconds());
 		
 	}
 

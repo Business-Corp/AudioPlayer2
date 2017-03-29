@@ -1,7 +1,9 @@
 package player.control;
 
+import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 import player.Track;
 import player.playlist.Playlist;
 
@@ -90,6 +92,22 @@ public class PlayerController {
 
 	public void setPlaylist(Playlist list) {
 		playlist = list;
+		
+	}
+	
+	public ReadOnlyObjectProperty<Duration> CurrentTimeProperty(){
+		if(mediaPlayer!=null){
+		return mediaPlayer.currentTimeProperty();
+		
+		}
+		return null;
+	}
+	
+	public Duration getMaxTime(){
+		if(mediaPlayer!=null){
+			mediaPlayer.getMedia().getDuration();
+		}
+		return new Duration(0);
 	}
 
 	private boolean checkPlaylist() {

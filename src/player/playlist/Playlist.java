@@ -86,11 +86,11 @@ public class Playlist {
 		
 	}
 	public Integer getIndex(Track track){
-		return playlist.lastIndexOf(track)+1;
+		return playlist.lastIndexOf(track);
 	}
 	public Track getTrackFromIndex(int index){
 		if(playlist.size()>=1){
-			return playlist.get((index%playlist.size())-1);
+			return playlist.get((index%playlist.size()));
 		}
 		return null;
 	}

@@ -39,5 +39,8 @@ public class Track {
 	public Media getMedia(){
 		return media;
 	}
+	public File getFile(){
+		return file;
+	}
 	
 }

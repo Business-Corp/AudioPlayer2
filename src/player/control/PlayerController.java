@@ -30,16 +30,20 @@ public class PlayerController {
 	 * Playlist ab, wenn aktuell kein lied geladen ist.
 	 */
 	public void play() {
+		
 		if (mediaPlayer != null) {
 
 			mediaPlayer.play();
 
 		} else {
+			
 			if (checkPlaylist()) {
-				Track temp = playlist.getTrackFromIndex(1);
+				
+				Track temp = playlist.getTrackFromIndex(0);
 				if(temp != null){
-					mediaPlayer=new MediaPlayer(temp.getMedia());
 					
+					mediaPlayer=new MediaPlayer(new Media(temp.getFile().toURI().toString()));
+					mediaPlayer.play();
 				}
 			}
 		}

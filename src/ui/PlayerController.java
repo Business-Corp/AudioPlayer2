@@ -133,6 +133,12 @@ public class PlayerController implements Initializable{
 		}
 		
 		
+		
+		
+		
+		
+		
+		
 	}
 	private void updateSlider(MediaPlayer mediaplayer){
 		

@@ -1,11 +1,15 @@
 package ui;
 	
+import java.io.File;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import player.control.PlayerController;
+import player.playlist.Playlist;
 
 
 public class Main extends Application {
@@ -22,6 +26,23 @@ public class Main extends Application {
 			primaryStage.show();
 			
 			
+			
+			
+			
+//			String pfad2 = "E:\\Neuer Ordner\\musicc\\Music\\Anamanaguchi\\Anamanaguchi - Endless Fantasy\\01 Endless Fantasy.mp3";
+//			File file = new File(pfad2);
+//			Playlist playlist = new Playlist();
+//			playlist.addTrack(file);
+//			
+//			player.control.PlayerController pc = player.control.PlayerController.getInstance();
+//			
+//			pc.setPlaylist(playlist);
+//			
+//			pc.play();
+//			
+//			Thread.sleep(5000);
+//			
+//			pc.stop();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
